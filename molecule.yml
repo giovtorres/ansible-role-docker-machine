@@ -7,6 +7,7 @@ docker:
     - name: ansible-role-docker-machine-fedora25
       image: fedora
       image_version: 25
+      command: /bin/bash
     - name: ansible-role-docker-machine-debian9
       image: debian
       image_version: 9
