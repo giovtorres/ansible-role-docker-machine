@@ -8,7 +8,7 @@
 - name: Download ca-certificates
   package:
     name: ca-certificates
-    state: installed
+    state: present
 
 - name: Download docker-machine binary.
   get_url:
@@ -17,7 +17,7 @@
     owner: root
     group: root
     mode: 0755
-  when: not dm_binary.stat.exists
+  when: not dm_binary.stat.exists|bool
 
 - name: Check for docker-machine bash completion.
   stat:
@@ -31,4 +31,4 @@
     owner: root
     group: root
     mode: 0644
-  when: not dm_bash_completion.stat.exists
+  when: not dm_bash_completion.stat.exists|bool

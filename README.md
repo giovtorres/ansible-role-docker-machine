@@ -14,7 +14,7 @@ None.
 
 Set the `docker-machine` release version.  (See [available versions](https://github.com/docker/machine/releases))
 
-    docker_machine_version: 0.12.2
+    docker_machine_version: 0.16.1
 
 Install `docker-machine` at this path:
 
@@ -28,6 +28,7 @@ giovtorres.bash-completion
 
     - hosts: servers
       roles:
+         - giovtorres.bash-completion
          - giovtorres.docker-machine
 
 ## License

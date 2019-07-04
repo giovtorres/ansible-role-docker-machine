@@ -1,0 +1,28 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+lint:
+  name: yamllint
+platforms:
+  - name: ansible-role-docker-machine-centos7
+    image: centos:7
+  - name: ansible-role-docker-machine-fedora29
+    image: fedora:29
+  - name: ansible-role-docker-machine-debian8
+    image: debian:8
+  - name: ansible-role-docker-machine-debian9
+    image: debian:9
+  - name: ansible-role-docker-machine-ubuntu-trusty
+    image: ubuntu:trusty
+  - name: ansible-role-docker-machine-ubuntu-xenial
+    image: ubuntu:xenial
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+verifier:
+  name: testinfra
+  lint:
+    name: flake8
